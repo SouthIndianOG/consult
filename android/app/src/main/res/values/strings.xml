@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SouthIndian OG</string>
+    <string name="title_activity_main">SouthIndian OG</string>
+    <string name="package_name">com.southindianog.app</string>
+    <string name="custom_url_scheme">com.southindianog.app</string>
+</resources>
