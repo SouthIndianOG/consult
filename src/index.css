@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-medical-900 text-white font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-heritage-gold text-white px-6 py-3 rounded-xl font-semibold hover:bg-amber-600 transition-colors duration-300 shadow-lg shadow-heritage-gold/20;
+  }
+  
+  .btn-secondary {
+    @apply border border-white/20 text-white px-6 py-3 rounded-xl font-semibold hover:bg-white/10 transition-colors duration-300;
+  }
+
+  .card-glass {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-heritage-gold/50 transition-all duration-300;
+  }
+}

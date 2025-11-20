@@ -1,117 +1,79 @@
 import React from 'react';
-import { ArrowRight, Award, Users, Clock, CheckCircle } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 
 const Hero = () => {
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const scrollToServices = () => {
-    const element = document.getElementById('services');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <section id="hero" className="relative bg-gradient-to-br from-blue-50 to-white pt-24 pb-16 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-green-600/5"></div>
-      
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="max-w-2xl">
-            <div className="flex items-center space-x-2 mb-6">
-              <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-                Expert OBGyn Care
-              </span>
-              <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-                AI Healthcare Educator
-              </span>
+    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-innovation-teal/10 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-heritage-gold/5 blur-[100px] rounded-full"></div>
+      </div>
+
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+
+          {/* Text Content */}
+          <div className="flex-1 text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 animate-fade-in">
+              <Sparkles className="w-4 h-4 text-heritage-gold" />
+              <span className="text-sm font-medium text-gray-300">Bridging Medicine + Technology</span>
             </div>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Expert OBGyn Care & 
-              <span className="text-blue-600"> Maternal-Fetal Medicine</span>
+
+            <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+              The <span className="text-transparent bg-clip-text bg-gradient-to-r from-heritage-gold to-yellow-200">Realistic</span><br />
+              <span className="text-white">Optimist</span>
             </h1>
-            
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              MS Obstetrics & Gynecology | High-Risk Pregnancy Specialist | Medical Innovation Educator
+
+            <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              Dr. Prashanth G — OBGyn specialist & AI enthusiast.
+              Simplifying healthcare for doctors, innovators, and the curious public.
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button 
-                onClick={scrollToContact}
-                className="bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition-all duration-300 font-semibold flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-              >
-                <span>Book Consultation</span>
-                <ArrowRight className="h-5 w-5" />
-              </button>
-              <button 
-                onClick={scrollToServices}
-                className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full hover:border-blue-600 hover:text-blue-600 transition-all duration-300 font-semibold"
-              >
-                Learn About Our Services
-              </button>
-            </div>
 
-            {/* Key Features */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="flex items-center space-x-3">
-                <CheckCircle className="h-6 w-6 text-green-600" />
-                <span className="text-gray-700 font-medium">Evidence-Based Treatment</span>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <a
+                href="https://calendar.app.google/eNwjgcKkDFwYdMKH8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary flex items-center justify-center gap-2 group"
+              >
+                Book Consultation
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a href="#services" className="btn-secondary">
+                Explore Care Programs
+              </a>
+            </div>
+          </div>
+
+          {/* Image Content */}
+          <div className="flex-1 relative">
+            <div className="relative w-72 h-72 sm:w-96 sm:h-96 mx-auto">
+              {/* Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-heritage-gold to-innovation-teal rounded-full blur-2xl opacity-20 animate-pulse-slow"></div>
+
+              {/* Image Container */}
+              <div className="relative w-full h-full rounded-full border-4 border-white/10 overflow-hidden shadow-2xl shadow-black/50">
+                <img
+                  src="/dr-prashanth.jpg"
+                  alt="Dr. Prashanth G"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <div className="flex items-center space-x-3">
-                <CheckCircle className="h-6 w-6 text-green-600" />
-                <span className="text-gray-700 font-medium">High-Risk Pregnancy Care</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <CheckCircle className="h-6 w-6 text-green-600" />
-                <span className="text-gray-700 font-medium">Telemedicine Available</span>
+
+              {/* Floating Badges */}
+              <div className="absolute -bottom-4 -right-4 bg-medical-900/90 backdrop-blur-md border border-white/10 p-4 rounded-2xl shadow-xl animate-bounce-slow">
+                <div className="flex items-center gap-3">
+                  <div className="w-3 h-3 rounded-full bg-innovation-teal animate-pulse"></div>
+                  <div>
+                    <p className="text-xs text-gray-400">Next Available</p>
+                    <p className="text-sm font-bold text-white">Today, 4:00 PM</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Hero Image & Stats */}
-          <div className="relative">
-            <div className="bg-white rounded-2xl shadow-2xl p-8">
-              <img 
-                src="https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="Professional Medical Care"
-                className="w-full h-64 object-cover rounded-xl mb-6"
-              />
-              
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-4">
-                <div className="text-center">
-                  <div className="flex items-center justify-center mb-2">
-                    <Award className="h-8 w-8 text-blue-600" />
-                  </div>
-                  <div className="text-2xl font-bold text-gray-900">MS</div>
-                  <div className="text-sm text-gray-600">OBGyn Degree</div>
-                </div>
-                <div className="text-center">
-                  <div className="flex items-center justify-center mb-2">
-                    <Clock className="h-8 w-8 text-green-600" />
-                  </div>
-                  <div className="text-2xl font-bold text-gray-900">24/7</div>
-                  <div className="text-sm text-gray-600">Emergency Line</div>
-                </div>
-                <div className="text-center">
-                  <div className="flex items-center justify-center mb-2">
-                    <Award className="h-8 w-8 text-amber-600" />
-                  </div>
-                  <div className="text-2xl font-bold text-gray-900">MS</div>
-                  <div className="text-sm text-gray-600">Specialization</div>
-                </div>
-              </div>
-            </div>
-
-          </div>
         </div>
       </div>
     </section>

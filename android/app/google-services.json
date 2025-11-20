@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "213435055770",
+    "project_id": "southindianog",
+    "storage_bucket": "southindianog.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213435055770:android:ce2a21a2b4f0e370872923",
+        "android_client_info": {
+          "package_name": "com.southindianog.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "213435055770-86o34u8bl4182t0p3md0egqdcf1h6b2k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_bX8G9VW_Ni_wBhcqIksu-Ob92q8wmPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "213435055770-86o34u8bl4182t0p3md0egqdcf1h6b2k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

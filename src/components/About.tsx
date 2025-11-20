@@ -1,169 +1,49 @@
 import React from 'react';
-import { GraduationCap, Award, Users, MapPin, Calendar, BookOpen, Briefcase } from 'lucide-react';
+import { Award, BookOpen, Users } from 'lucide-react';
 
 const About = () => {
-  const credentials = [
-    {
-      icon: GraduationCap,
-      title: 'MS Obstetrics & Gynecology',
-      subtitle: 'Government Medical College, Thiruvananthapuram',
-      year: 'Current',
-      color: 'blue'
-    },
-    {
-      icon: GraduationCap,
-      title: 'MBBS',
-      subtitle: 'Bangalore Medical College & Research Institute',
-      year: 'Completed',
-      color: 'green'
-    },
-  ];
-
-  const achievements = [
-    'Member of Federation of Obstetric and Gynaecological Societies of India (FOGSI)',
-    'Member of Travancore Obstetric and Gynaecological Society (TROGS)',
-    'Research publications in obstetrics and gynecology',
-    'Innovation mentor for healthcare startups',
-    'AI healthcare education specialist',
-    'Evidence-based medicine advocate'
-  ];
-
-  const timeline = [
-    {
-      year: 'Current',
-      title: 'MS Obstetrics & Gynecology',
-      location: 'Government Medical College, Thiruvananthapuram',
-      description: 'Specializing in comprehensive women\'s healthcare and high-risk pregnancies'
-    },
-    {
-      year: 'May 2026',
-      title: 'Future Practice',
-      location: 'Karnataka',
-      description: 'Expanding practice to serve patients in Karnataka'
-    }
-  ];
-
-  const getColorClasses = (color: string) => {
-    const colorMap: Record<string, any> = {
-      blue: { bg: 'bg-blue-50', text: 'text-blue-600' },
-      green: { bg: 'bg-green-50', text: 'text-green-600' },
-      purple: { bg: 'bg-purple-50', text: 'text-purple-600' },
-      amber: { bg: 'bg-amber-50', text: 'text-amber-600' }
-    };
-    return colorMap[color] || colorMap.blue;
-  };
-
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            About Dr. Prashanth G
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A trusted medical expert bridging clinical excellence with innovation, 
-            dedicated to improving maternal-fetal outcomes through evidence-based care
+    <section className="py-20 bg-medical-50/5">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4">About <span className="text-heritage-gold">Dr. Prashanth G</span></h2>
+          <p className="text-gray-400 text-lg">
+            MS Obstetrics & Gynecology | Maternal-Fetal Medicine Enthusiast
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Professional Background */}
-          <div>
-            <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 mb-8 shadow-lg">
-              <img 
-                src="https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="Dr. Prashanth G"
-                className="w-32 h-32 rounded-full object-cover mx-auto mb-6 shadow-lg"
-              />
-              <h3 className="text-2xl font-bold text-gray-900 text-center mb-4">
-                SouthIndian OG - The Trusted MedTech Voice
-              </h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                Dr. Prashanth G is a dedicated OBGyn specialist with a passion for evidence-based medicine 
-                and healthcare innovation. Currently pursuing MS in Obstetrics & Gynecology, he combines 
-                clinical excellence with cutting-edge technology to provide comprehensive women's healthcare.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                As an AI healthcare educator and medical innovation mentor, Dr. Prashanth bridges the gap 
-                between traditional medicine and modern technology, ensuring his patients receive the most 
-                advanced and compassionate care available.
-              </p>
+        <div className="grid md:grid-cols-3 gap-8">
+          {/* Card 1 */}
+          <div className="card-glass p-8 text-center group hover:-translate-y-2 transition-transform duration-300">
+            <div className="w-16 h-16 mx-auto bg-heritage-gold/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-heritage-gold/20 transition-colors">
+              <Award className="w-8 h-8 text-heritage-gold" />
             </div>
-
-            {/* Vision Statement */}
-            <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 shadow-md">
-              <h4 className="text-xl font-bold text-gray-900 mb-3">Our Vision</h4>
-              <p className="text-gray-700 italic">
-                "To provide exceptional women's healthcare through evidence-based practice and compassionate care, 
-                ensuring every patient receives personalized treatment that addresses their unique needs and circumstances."
-              </p>
-            </div>
+            <h3 className="text-xl font-bold mb-3">Trusted Expert</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Senior Resident at GMC Thiruvananthapuram. Specializing in high-risk pregnancies and evidence-based care.
+            </p>
           </div>
 
-          {/* Credentials and Achievements */}
-          <div className="space-y-8">
-            {/* Credentials Grid */}
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Professional Credentials</h3>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {credentials.map((credential, index) => {
-                  const colors = getColorClasses(credential.color);
-                  const IconComponent = credential.icon;
-                  
-                  return (
-                    <div key={index} className="bg-white rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
-                      <div className={`${colors.bg} w-12 h-12 rounded-lg flex items-center justify-center mb-4`}>
-                        <IconComponent className={`h-6 w-6 ${colors.text}`} />
-                      </div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-1">{credential.title}</h4>
-                      <p className="text-sm text-gray-600 mb-2">{credential.subtitle}</p>
-                      <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
-                        {credential.year}
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
+          {/* Card 2 */}
+          <div className="card-glass p-8 text-center group hover:-translate-y-2 transition-transform duration-300">
+            <div className="w-16 h-16 mx-auto bg-innovation-teal/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-innovation-teal/20 transition-colors">
+              <BookOpen className="w-8 h-8 text-innovation-teal" />
             </div>
+            <h3 className="text-xl font-bold mb-3">Medical Educator</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Bridging the gap between complex medical topics and simple, accessible explanations for everyone.
+            </p>
+          </div>
 
-            {/* Achievements */}
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Achievements & Memberships</h3>
-              <div className="space-y-3">
-                {achievements.map((achievement, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <Award className="h-5 w-5 text-amber-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">{achievement}</span>
-                  </div>
-                ))}
-              </div>
+          {/* Card 3 */}
+          <div className="card-glass p-8 text-center group hover:-translate-y-2 transition-transform duration-300">
+            <div className="w-16 h-16 mx-auto bg-blue-500/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
+              <Users className="w-8 h-8 text-blue-400" />
             </div>
-
-            {/* Timeline */}
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Professional Timeline</h3>
-              <div className="space-y-6">
-                {timeline.map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0">
-                      {index + 1}
-                    </div>
-                    <div>
-                      <div className="flex items-center space-x-2 mb-1">
-                        <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">
-                          {item.year}
-                        </span>
-                        <MapPin className="h-4 w-4 text-gray-400" />
-                        <span className="text-sm text-gray-500">{item.location}</span>
-                      </div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-1">{item.title}</h4>
-                      <p className="text-gray-600 text-sm">{item.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <h3 className="text-xl font-bold mb-3">Community Leader</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Founder of NeoAdjuvant & Innovation Coordinator. Building a community of future-ready healthcare professionals.
+            </p>
           </div>
         </div>
       </div>
