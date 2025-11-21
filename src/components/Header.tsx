@@ -49,6 +49,7 @@ const Header = () => {
           <nav className="hidden md:flex items-center gap-8">
             <Link to="/" className="text-sm font-medium text-gray-300 hover:text-heritage-gold transition-colors">{t('header.home')}</Link>
             <Link to="/care-programs" className="text-sm font-medium text-gray-300 hover:text-heritage-gold transition-colors">{t('header.carePrograms')}</Link>
+            <Link to="/book" className="text-sm font-medium text-gray-300 hover:text-heritage-gold transition-colors">{t('header.bookAppointment')}</Link>
             <a href="https://www.youtube.com/@RealSouthindianOG" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-300 hover:text-heritage-gold transition-colors">{t('header.youtube')}</a>
 
             {/* Language Switcher */}

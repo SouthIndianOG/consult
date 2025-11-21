@@ -8,6 +8,7 @@ import Services from './components/Services';
 import Footer from './components/Footer';
 import CarePrograms from './components/CarePrograms';
 import ProgramDetail from './components/ProgramDetail';
+import Booking from './components/Booking';
 import Login from './components/Login';
 import AdminDashboard from './components/admin/AdminDashboard';
 import AdminProgramForm from './components/admin/AdminProgramForm';
@@ -31,6 +32,7 @@ function App() {
                 </>
               } />
               <Route path="/login" element={<Login />} />
+              <Route path="/book" element={<Booking />} />
               <Route path="/care-programs" element={<CarePrograms />} />
               <Route path="/program/:id" element={<ProgramDetail />} />
               <Route path="/admin" element={<AdminDashboard />} />

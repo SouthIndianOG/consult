@@ -32,9 +32,9 @@ const Services = () => {
                 <p className="text-gray-400 mb-6 text-sm leading-relaxed">
                   {t('services.second_opinion.description')}
                 </p>
-                <a href="https://calendar.app.google/eNwjgcKkDFwYdMKH8" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-heritage-gold font-semibold hover:gap-3 transition-all">
+                <Link to="/book" className="inline-flex items-center gap-2 text-heritage-gold font-semibold hover:gap-3 transition-all">
                   {t('services.second_opinion.cta')} <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

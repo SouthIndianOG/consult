@@ -35,7 +35,7 @@ const Footer = () => {
               <li><a href="#" className="hover:text-heritage-gold transition-colors">{t('header.home')}</a></li>
               <li><a href="#services" className="hover:text-heritage-gold transition-colors">{t('services.second_opinion.title')}</a></li>
               <li><a href="#services" className="hover:text-heritage-gold transition-colors">{t('header.carePrograms')}</a></li>
-              <li><a href="https://calendar.app.google/eNwjgcKkDFwYdMKH8" className="hover:text-heritage-gold transition-colors">{t('header.bookAppointment')}</a></li>
+              <li><Link to="/book" className="hover:text-heritage-gold transition-colors">{t('header.bookAppointment')}</Link></li>
             </ul>
           </div>
 
@@ -45,8 +45,7 @@ const Footer = () => {
             <ul className="space-y-4 text-sm text-gray-400">
               <li>Government Medical College</li>
               <li>Thiruvananthapuram, Kerala</li>
-              <li>Prashanth459g@gmail.com</li>
-              <li>+91 86600 30840</li>
+              <li>womb2worldwonders@gmail.com</li>
             </ul>
           </div>
         </div>

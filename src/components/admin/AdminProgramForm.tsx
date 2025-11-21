@@ -34,7 +34,14 @@ const AdminProgramForm = () => {
                     const docRef = doc(db, 'programs', id);
                     const docSnap = await getDoc(docRef);
                     if (docSnap.exists()) {
-                        setFormData(docSnap.data() as any);
+                        const data = docSnap.data();
+                        setFormData({
+                            title: data.title || '',
+                            description: data.description || '',
+                            icon: data.icon || 'Heart',
+                            features: data.features || [],
+                            modules: data.modules || []
+                        });
                     }
                 } catch (error) {
                     console.error("Error fetching program:", error);
@@ -149,7 +156,7 @@ const AdminProgramForm = () => {
                     <div>
                         <label className="block text-sm font-medium text-gray-400 mb-2">Features</label>
                         <div className="space-y-3">
-                            {formData.features.map((feature, index) => (
+                            {(formData.features || []).map((feature, index) => (
                                 <div key={index} className="flex gap-2">
                                     <input
                                         type="text"
@@ -173,7 +180,7 @@ const AdminProgramForm = () => {
                     <div>
                         <label className="block text-sm font-medium text-gray-400 mb-2">Modules</label>
                         <div className="space-y-4">
-                            {formData.modules.map((module, index) => (
+                            {(formData.modules || []).map((module, index) => (
                                 <div key={index} className="p-4 bg-white/5 rounded-lg border border-white/10 space-y-3">
                                     <div className="flex justify-between items-start">
                                         <h4 className="text-sm font-medium text-gray-400">Module {index + 1}</h4>

@@ -34,15 +34,13 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a
-                href="https://calendar.app.google/eNwjgcKkDFwYdMKH8"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/book"
                 className="btn-primary flex items-center justify-center gap-2 group"
               >
                 {t('hero.cta_primary')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </Link>
               <Link to="/care-programs" className="btn-secondary">
                 {t('hero.cta_secondary')}
               </Link>
