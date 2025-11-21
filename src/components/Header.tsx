@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Stethoscope, LogOut, User as UserIcon } from 'lucide-react';
+import { Menu, X, LogOut, User as UserIcon, Globe } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const { user, logout } = useAuth();
+  const { t, i18n } = useTranslation();
+
+  const toggleLanguage = () => {
+    const newLang = i18n.language === 'en' ? 'kn' : 'en';
+    i18n.changeLanguage(newLang);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,9 +47,18 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <Link to="/" className="text-sm font-medium text-gray-300 hover:text-heritage-gold transition-colors">Home</Link>
-            <Link to="/care-programs" className="text-sm font-medium text-gray-300 hover:text-heritage-gold transition-colors">Care Programs</Link>
-            <a href="https://www.youtube.com/@RealSouthindianOG" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-300 hover:text-heritage-gold transition-colors">YouTube</a>
+            <Link to="/" className="text-sm font-medium text-gray-300 hover:text-heritage-gold transition-colors">{t('header.home')}</Link>
+            <Link to="/care-programs" className="text-sm font-medium text-gray-300 hover:text-heritage-gold transition-colors">{t('header.carePrograms')}</Link>
+            <a href="https://www.youtube.com/@RealSouthindianOG" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-300 hover:text-heritage-gold transition-colors">{t('header.youtube')}</a>
+
+            {/* Language Switcher */}
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center gap-1 text-sm font-medium text-gray-300 hover:text-heritage-gold transition-colors"
+            >
+              <Globe className="w-4 h-4" />
+              <span>{i18n.language === 'en' ? 'KN' : 'EN'}</span>
+            </button>
 
             {user ? (
               <div className="flex items-center gap-4">
@@ -59,7 +75,7 @@ const Header = () => {
                 <button
                   onClick={logout}
                   className="p-2 text-gray-400 hover:text-white transition-colors"
-                  title="Logout"
+                  title={t('header.logout')}
                 >
                   <LogOut className="w-5 h-5" />
                 </button>
@@ -69,18 +85,28 @@ const Header = () => {
                 to="/login"
                 className="px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/10 rounded-lg text-sm font-semibold transition-all"
               >
-                Login
+                {t('header.login')}
               </Link>
             )}
           </nav>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-gray-300 hover:text-white"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center gap-4 md:hidden">
+            {/* Mobile Language Switcher */}
+            <button
+              onClick={toggleLanguage}
+              className="text-gray-300 hover:text-heritage-gold"
+            >
+              <span className="font-bold text-sm">{i18n.language === 'en' ? 'KN' : 'EN'}</span>
+            </button>
+
+            <button
+              className="p-2 text-gray-300 hover:text-white"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -88,9 +114,9 @@ const Header = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-medical-900 border-b border-white/10 p-4 animate-fade-in">
           <div className="flex flex-col gap-4">
-            <Link to="/" className="text-gray-300 hover:text-heritage-gold py-2">Home</Link>
-            <Link to="/care-programs" className="text-gray-300 hover:text-heritage-gold py-2">Care Programs</Link>
-            <a href="https://www.youtube.com/@RealSouthindianOG" className="text-gray-300 hover:text-heritage-gold py-2">YouTube</a>
+            <Link to="/" className="text-gray-300 hover:text-heritage-gold py-2">{t('header.home')}</Link>
+            <Link to="/care-programs" className="text-gray-300 hover:text-heritage-gold py-2">{t('header.carePrograms')}</Link>
+            <a href="https://www.youtube.com/@RealSouthindianOG" className="text-gray-300 hover:text-heritage-gold py-2">{t('header.youtube')}</a>
 
             {user ? (
               <>
@@ -112,7 +138,7 @@ const Header = () => {
                   className="flex items-center gap-2 text-red-400 hover:text-red-300 py-2"
                 >
                   <LogOut className="w-5 h-5" />
-                  Logout
+                  {t('header.logout')}
                 </button>
               </>
             ) : (
@@ -120,7 +146,7 @@ const Header = () => {
                 to="/login"
                 className="text-center py-3 bg-heritage-gold text-white rounded-lg font-semibold mt-2"
               >
-                Login
+                {t('header.login')}
               </Link>
             )}
           </div>

@@ -1,7 +1,10 @@
 import React from 'react';
 import { Stethoscope, Heart, ArrowRight, ShieldCheck } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Services = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="services" className="py-20 relative overflow-hidden">
       {/* Background Decor */}
@@ -9,8 +12,8 @@ const Services = () => {
 
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">Core <span className="text-innovation-teal">Services</span></h2>
-          <p className="text-gray-400">Comprehensive care designed for your peace of mind</p>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4">{t('services.title_prefix')} <span className="text-innovation-teal">{t('services.title_highlight')}</span></h2>
+          <p className="text-gray-400">{t('services.subtitle')}</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -24,12 +27,12 @@ const Services = () => {
                 <Stethoscope className="w-6 h-6 text-heritage-gold" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-2">Second Opinion Clinic</h3>
+                <h3 className="text-2xl font-bold mb-2">{t('services.second_opinion.title')}</h3>
                 <p className="text-gray-400 mb-6 text-sm leading-relaxed">
-                  Unsure about a diagnosis or treatment plan? Get a detailed, evidence-based review of your case from an expert perspective.
+                  {t('services.second_opinion.description')}
                 </p>
                 <a href="https://calendar.app.google/eNwjgcKkDFwYdMKH8" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-heritage-gold font-semibold hover:gap-3 transition-all">
-                  Book Consultation <ArrowRight className="w-4 h-4" />
+                  {t('services.second_opinion.cta')} <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
             </div>
@@ -45,21 +48,21 @@ const Services = () => {
               </div>
               <div>
                 <div className="flex items-center gap-3 mb-2">
-                  <h3 className="text-2xl font-bold">Care Programs</h3>
-                  <span className="px-2 py-1 rounded text-[10px] font-bold bg-innovation-teal/20 text-innovation-teal border border-innovation-teal/30">COMING SOON</span>
+                  <h3 className="text-2xl font-bold">{t('services.care_programs.title')}</h3>
+                  <span className="px-2 py-1 rounded text-[10px] font-bold bg-innovation-teal/20 text-innovation-teal border border-innovation-teal/30">{t('services.care_programs.badge')}</span>
                 </div>
                 <p className="text-gray-400 mb-6 text-sm leading-relaxed">
-                  Structured guidance for every stage: Pre-pregnancy, Trimesters, High-Risk (GDM/HTN), and Postpartum care.
+                  {t('services.care_programs.description')}
                 </p>
 
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 text-sm text-gray-300">
                     <ShieldCheck className="w-4 h-4 text-innovation-teal" />
-                    <span>Trimester-wise Handholding</span>
+                    <span>{t('services.care_programs.feature1')}</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-gray-300">
                     <ShieldCheck className="w-4 h-4 text-innovation-teal" />
-                    <span>Lab & Scan Reviews</span>
+                    <span>{t('services.care_programs.feature2')}</span>
                   </div>
                 </div>
               </div>
