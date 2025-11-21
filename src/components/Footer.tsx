@@ -1,6 +1,7 @@
 import React from 'react';
-import { Instagram, Youtube, Linkedin, Facebook } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Youtube } from 'lucide-react';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -50,8 +51,11 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 text-center text-sm text-gray-500">
+        <div className="border-t border-white/10 mt-12 pt-8 text-center text-gray-400 text-sm">
           <p>&copy; {new Date().getFullYear()} {t('footer.rights')}</p>
+          <Link to="/admin" className="mt-2 inline-block text-xs text-gray-600 hover:text-gray-400 transition-colors">
+            Admin
+          </Link>
         </div>
       </div>
     </footer>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -42,9 +43,9 @@ const Hero = () => {
                 {t('hero.cta_primary')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
-              <a href="#services" className="btn-secondary">
+              <Link to="/care-programs" className="btn-secondary">
                 {t('hero.cta_secondary')}
-              </a>
+              </Link>
             </div>
           </div>
 

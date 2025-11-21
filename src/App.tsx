@@ -9,11 +9,16 @@ import Footer from './components/Footer';
 import CarePrograms from './components/CarePrograms';
 import ProgramDetail from './components/ProgramDetail';
 import Login from './components/Login';
+import AdminDashboard from './components/admin/AdminDashboard';
+import AdminProgramForm from './components/admin/AdminProgramForm';
+
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <AuthProvider>
       <Router>
+        <ScrollToTop />
         <div className="min-h-screen bg-medical-900 text-white font-sans selection:bg-heritage-gold/30">
           <Header />
           <main>
@@ -28,12 +33,15 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/care-programs" element={<CarePrograms />} />
               <Route path="/program/:id" element={<ProgramDetail />} />
+              <Route path="/admin" element={<AdminDashboard />} />
+              <Route path="/admin/new" element={<AdminProgramForm />} />
+              <Route path="/admin/edit/:id" element={<AdminProgramForm />} />
             </Routes>
           </main>
           <Footer />
         </div>
       </Router>
-    </AuthProvider>
+    </AuthProvider >
   );
 }
 

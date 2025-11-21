@@ -1,6 +1,7 @@
 import React from 'react';
 import { Stethoscope, Heart, ArrowRight, ShieldCheck } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   const { t } = useTranslation();
@@ -55,7 +56,7 @@ const Services = () => {
                   {t('services.care_programs.description')}
                 </p>
 
-                <div className="space-y-3">
+                <div className="space-y-3 mb-6">
                   <div className="flex items-center gap-2 text-sm text-gray-300">
                     <ShieldCheck className="w-4 h-4 text-innovation-teal" />
                     <span>{t('services.care_programs.feature1')}</span>
@@ -65,6 +66,10 @@ const Services = () => {
                     <span>{t('services.care_programs.feature2')}</span>
                   </div>
                 </div>
+
+                <Link to="/care-programs" className="inline-flex items-center gap-2 text-innovation-teal font-semibold hover:gap-3 transition-all">
+                  {t('services.care_programs.cta')} <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
           </div>
